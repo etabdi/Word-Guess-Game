@@ -1,8 +1,13 @@
-
+body {
+  background:white;
+  color:black;
+  width:1400px;
+  height:900;
+  }
   /* The animation code */
-@keyframes example {
-    from {background-color:rgb(52, 82, 7);}
-    to {background-color:black;}
+@keyframes ex1 {
+    from {background-color:rgb(253, 8, 20);}
+    to {background-color:white;}
   }
   
   /* The element to apply the animation to */
@@ -10,27 +15,22 @@
     #audio{
          display:"none";
     }
-
+    
     #msg{
-
-    background-color: red;
-    animation-name: example;
-    animation-duration: 4s;
-    animation-delay: 2s;
-    animation-iteration-count: 50;
+    
     text-align: left;
-    float:center;
     width: auto;
-    margin: 10px auto;
+    margin:10px auto;
     height:auto;
-    clear: both;
+    position: fixed;
+    left:30px;
+    bottom:200px ;
+    tab-size: 30px;
+    font-size: 26px;
   }
-  body {
-    background:black;
-    color:antiquewhite;
-  }
+ 
   #box {
-    background: #0e140f;
+    background:green;
     transition-property: all;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
@@ -39,7 +39,7 @@
 
   }
   #box:hover {
-    background: #1a1919;
+    background: white;
     text-emphasis: none;
     text-align: left;
     padding: 40px auto;
@@ -55,42 +55,56 @@
   }
   
   .start-msg {
-    background-color: red;
+  
     font-size: 40px;
-    color: black;
+    animation-name: ex1;
+    animation-duration: 4s;
+    animation-delay: 2s;
+    animation-iteration-count:100;
+    color:rgb(75, 121, 6);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     float:center;
-    text-decoration-color: blue;
+    text-decoration-color: rgb(9, 255, 0);
   }
   
-  section .game-data {
-    font-size: 1.2em;
-  }
   
   #question {
-    font-size: 2.0em;
-    color: rosybrown;
-    letter-spacing: 0.1em;
+    position:fixed ;
+    left:20px;
+    top:250px;
+    border:solid black;
+    padding:40px;
+    background-color:white;
+    font-size:25px;
+    font-size:35px;
+    color:blue;
+    letter-spacing:5px;
   }
   
   #already-guessed{
     letter-spacing: 0.2em;
   }
-  
+    #hint-button
+    {font-size: 40px;
+    background-color: rgb(220, 220, 228);
+  }
   #hint {
-    font-size: 1.2em;
-    color:whitesmoke;
+    font-size: 36px;
+    color:blue
     
 
   }
 
   #earth {
     /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
-    position: relative;
+    position: fixed;
+    left:450px;
+    top:100px;
   
     /* [2] Set-up the dimensions and spacing */
-    width: 300px;
-    height: 300px;
-    margin: 3em auto;
+    width: 600px;
+    height: 600px;
+    margin:10px auto;
   
     /* [3] Prepare the animation effects */
     transition: transform 200ms linear;
@@ -150,4 +164,17 @@
     font-weight: 700;
     line-height: 100px;
     margin-bottom: 30px;
-	color:#fff;
+  color:rgb(19, 3, 3);
+  
+  }
+  main {
+    margin:auto;
+    width:100%;
+    height:100%;
+    padding:15px;
+  }
+  
+  
+  
+  
+  

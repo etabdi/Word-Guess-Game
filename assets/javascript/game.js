@@ -1,10 +1,5 @@
-/*
-----------------------------------------------------------------
-80s themed hangman game
-----------------------------------------------------------------
-*/
 
-const artistData = {
+const cityData = {
 
     "Kabul":"Afghanistan",
     "Tirana":"Albania",
@@ -82,35 +77,24 @@ const artistData = {
    
   }
   
-  /*
-  ----------------------------------------------------------------
-  A class for the word guess game
-  ----------------------------------------------------------------
-  */
-  class Game80s {
-    constructor(remainingAttempts = 6) {
-      this.started = false; // game state boolean
-      this.answer = "";     // an original answer word/string
-      this.ansLetters = []; // unique letters of the answer
-      this.ansDisplay = []; // "_ _ _ _" on the web page
-      this.numWins = 0;     // the number of wins counter  
-      this.remaining = remainingAttempts; // remaining attempts counter
+    class cities {
+    constructor(remainingAttempts = 10) {
+      this.started = false; 
+      this.answer = "";     
+      this.ansLetters = []; 
+      this.ansDisplay = []; 
+      this.numWins = 0;    
+      this.remaining = remainingAttempts;
     }
-  
-    //
-    // (re-)start by initializing the variables
-    //
+   
     start(remainingGuess = this.remaining) {
       this.remaining = remainingGuess;
-      this.answer = this.pickAnswer(artistData);
+      this.answer = this.pickAnswer(cityData);
       this.ansLetters = this.initAnswerLetters(this.answer);
       this.ansDisplay = this.initAnswerDisplay(this.answer);
       this.started = true;
     }
-  
-    //
-    // Choose string from an array
-    //
+    
     pickAnswer(inputData) {
       let arrayData = [];
       for (let name in inputData) {
@@ -121,9 +105,7 @@ const artistData = {
       return arrayData[ndx];
     }
   
-    //
-    // Initialize unique answer letters in an array, all in lower-case 
-    //
+    
     initAnswerLetters(ansStr) {
       let ansLetters = [];
       for (let i = 0; i < ansStr.length; i++) {
@@ -136,10 +118,6 @@ const artistData = {
       return new Set(ansLetters);
     }
   
-    //
-    // Initialize ansDisplay i.e. "_ _ _ _" for the web page
-    // non-alphanumeric characters will be shown
-    //
     initAnswerDisplay(ansStr) {
       let ansDisplay = [];
       for (let i = 0; i < ansStr.length; i++) {
@@ -153,12 +131,8 @@ const artistData = {
       return ansDisplay;
     }
   
-    //
-    // Update the game data
-    // inputChar parameter should be in lower-case
-    //  
     updateGameData(inputChar) {
-      // Set.delete() returns true if inputChar has been deleted
+      
       if (this.ansLetters.delete(inputChar)) {
         this.updateAnsDisplay(inputChar);
         if (this.userWon()) {
@@ -172,9 +146,6 @@ const artistData = {
       return false;
     }
   
-    //
-    // Update the word displayed on the page
-    //  
     updateAnsDisplay(char) {
       console.log("char: =>" + char + "<- word: " + this.answer);
   
@@ -188,9 +159,6 @@ const artistData = {
       return this.ansDisplay;
     }
   
-    //
-    // Determine whether the user guessed all letters or not
-    //
     userWon() {
       if (this.ansLetters.size == 0) {
         return true;
@@ -198,44 +166,32 @@ const artistData = {
       return false;
     }
   
-    //
-    // Hint for the current answer key
-    //
     hint() {
-      return artistData[this.answer];
+      return cityData[this.answer];
     }
   }
   
-  /*
-  ----------------------------------------------------------------
-    A class for the game web page
-  ----------------------------------------------------------------
-  */
   class WebElems {
-    constructor(game = new Game80s()) {
+    constructor(game = new cities()) {
       this.startMsg = document.getElementById("start");
       this.numWins = document.getElementById("num-wins");
       this.answer = document.getElementById("question");
       this.remaining = document.getElementById("remaining-guesses");
       this.guessed = document.getElementById("already-guessed");
-      this.game = game;
+          this.game = game;
     }
   
-    //
-    // Takes user key input and play the game
-    //  
     handleKeyInput(userInput) {
       console.log("input: " + userInput);
   
       if (this.game.started) {
         this.startMsg.style.visibility = "hidden";
-  
-        // ignore ctrl, shift, etc. key stroke
+
         if (/^[\w~!@#$%^&*()_+=,.]$/.test(userInput)) {
           console.log("answer: " + this.game.answer);
           if (this.game.updateGameData(userInput.toLowerCase())) {
             this.start();
-            userInput = ""; // user won, so reset
+            userInput = ""; 
           } else {
             if (this.game.remaining === 0) {
               userInput = "";
@@ -244,7 +200,7 @@ const artistData = {
           this.updatePage(userInput);
         }
       } else {
-        // the very initial state or user lost
+        
         if (this.game.remaining === 0) {
           this.startMsg.style.visibility = "hidden";
         }
@@ -252,19 +208,13 @@ const artistData = {
       }
     }
   
-    //
-    // (re-)start the game
-    //
-    start(remainingGuess = 6) {
+    start(remainingGuess = 10) {
       this.game.start(remainingGuess);
       this.guessed.textContent = "";
       this.updatePage("");
       $("#hint").text("");
     }
   
-    //
-    // Update the page with the game data
-    //  
     updatePage(inputChar) {
       this.numWins.textContent = this.game.numWins;
       this.answer.textContent = this.game.ansDisplay.join("");
@@ -277,21 +227,22 @@ const artistData = {
       }
     }
   
-    //
-    // User lost, so show the answer
-    //
+    
     showAnswer() {
       this.answer.textContent = this.game.answer;
       this.startMsg.style.visibility = "visible";
     }
   
-    //
-    // Hint for the current answer key
-    //
-    hint() {
+      hint() {
+      
       return this.game.hint();
     }
   }
-  $("#speak").mouseenter(function() {
-    $("#sound-" + Math.ceil(Math.random() * 3))[0].play();
-});
+  var x = document.getElementById("myAudio").autoplay;
+
+  if (num-wins===0)
+  {
+    alert("you win");
+  }
+
+  

@@ -15,42 +15,79 @@
 </head>
 
 <body>
-  <header>
-        <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top " >
+      
+                <div class="container">
+                  
+                
+        
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon">
+        
+                          </span>
+                    </button>
+            
+                     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                              <li class="nav-item active">
+                                   <a class="nav-link" href="index.html">Home</a>
+                              </li>
+                              <li class="nav-item ">
+                                  <a class="nav-link" href="assets/Instruction How to play.html">Instruction</a>
+                              </li>
+                               <li class="nav-item">
+                                   <a class="nav-link" href="assets/contact us.html">Contact us</a>
+                              </li>
+                         </ul>
+                  </div>
+                
+                </div>
+              
+              </nav>
+ 
+            
+       
            <div class="banner-heading">              
                Capital Cities
             </div>
-         </div>
+            <hr/>
+            <div style="font-size:50px;color:tomato;position: fixed;top:40px;right:140px;">Wins: <span id="num-wins"></span>
+            </div>
+            <div class="start-msg" id="start" style="position: fixed;left:60px;top:150px;">
+            Press any key to get started!</div>
          
-  </header>
-   <div class="container">
-     <div id="earth"></div>
-                <div class="row">
-                        <div class="col-md-2">
-                                <audio controls autoplay  style="background-color:white;margin:10px;position:fixed;right:0px; bottom:30px">
-                                        <source src="assets/css/mp3.mp3" type="audio/ogg">
-                                        <source src="assets/css/mp3.mp3" type="audio/mpeg">
-                                        Your browser does not support the audio element.
-                                    </audio>
-                                
+         
+         <img src="assets/images/giphy.gif" style="position:fixed;RIGHT:100px;top:100px;width:400px;" >
+         </div>
+        </div>
+         
+
+        <div class="container">
+            <div id="earth"></div>
+            
+                        <div class="row">
+                                <div class="col-md-2" style="background-color:white;visibility:hidden;">
+                                <div id="music"><embed src="assets/css/mp3.mp3" autostart=true loop=false></div>                                
                         </div>
                         <hr/>
-                    <div id="msg" class="col-md-12"  style="position: fixed;left:70px;" >                                   
-                            <div class="start-msg" id="start">Press any key to get started!</div>
-                                <div class="game-data">
-                                    <div><span id="question"></span>
-                                    </div>
+                     <div class="game-data">
+                                <div><span id="question"></span>
+                                </div>
+                    <div id="msg" class="col-md-12" >                                   
+                            
+                                
                                     <div>Number of guesses remaining: <span id="remaining-guesses"></span>
                                 </div>
-                                <div>Letters already guessed: <span id="already-guessed"></span>
+                                <div>Letters guessed: <span id="already-guessed"></span>
                                 </div>
-                                <div>Wins: <span id="num-wins"></span>
+                                
                                 </div>
                             </div>                            
                     
                     </div>
-                    <div class="col-md-2 mt-4" style="position:fixed;right:200px;bottom:400px;width:200px;"> 
-                        <button id="hint-button">Hint</button>
+                    <div class="col-md-2 mt-4" style="position:fixed;right:200px;bottom:150px;width:250px;"> 
+                        <button id="hint-button">Hint(Country)</button>
                          <span id="hint"></span>
                      </div>
                 </div>
@@ -59,7 +96,7 @@
 
         
          </div>
-   <hr/>
+  
     <div class="row">
         <script>
             $(document).ready(function () {
