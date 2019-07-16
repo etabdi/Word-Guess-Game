@@ -15,55 +15,52 @@
 </head>
 
 <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top " >
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top " style="width:260px;float:right;" >
       
-                <div class="container">
-                  
-                
-        
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-                            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon">
-        
-                          </span>
-                    </button>
-            
-                     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                              <li class="nav-item active">
-                                   <a class="nav-link" href="index.html">Home</a>
-                              </li>
-                              <li class="nav-item ">
-                                  <a class="nav-link" href="assets/Instruction How to play.html">Instruction</a>
-                              </li>
-                               <li class="nav-item">
-                                   <a class="nav-link" href="assets/contact us.html">Contact us</a>
-                              </li>
-                         </ul>
-                  </div>
-                
-                </div>
-              
-              </nav>
- 
-            
-       
-           <div class="banner-heading">              
-               Capital Cities
-            </div>
-            <hr/>
-            <div style="font-size:50px;color:tomato;position: fixed;top:40px;right:140px;">Wins: <span id="num-wins"></span>
-            </div>
-            <div class="start-msg" id="start" style="position: fixed;left:60px;top:150px;">
-            Press any key to get started!</div>
-         
-         
-         <img src="assets/images/giphy.gif" style="position:fixed;RIGHT:100px;top:100px;width:400px;" >
-         </div>
-        </div>
-         
-
         <div class="container">
+          
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+
+                  </span>
+            </button>
+    
+             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                      <li class="nav-item active">
+                           <a class="nav-link" href="index.html">Home</a>
+                      </li>
+                      <li class="nav-item ">
+                          <a class="nav-link" href="assets/Instruction How to play.html">Instruction</a>
+                      </li>
+                       <li class="nav-item">
+                           <a class="nav-link" href="assets/contact us.html">Contact us</a>
+                      </li>
+                 </ul>
+          </div>
+          </div>
+        
+        </div>
+      
+      </nav>
+
+ 
+  <section class="main">
+    <div id="demotext">Capital Cities</div>
+               
+
+        <div id="main-1">
+                    <div id="wins" style="font-size:50px;width:260px;color:rgb(243, 255, 71);position:absolute;padding:20px;background-color:rgb(27, 31, 24);top:300px;right:0px;">Wins: <span id="num-wins">
+
+                    </span>
+                    </div>
+                    <div class="start-msg" id="start" style="position:absolute;left:460px;bottom:40px;">
+                    Press any key to get started!</div>
+                
+                
+                <img src="assets/images/giphy.gif" style="position:fixed;RIGHT:0px;top:45px;width:260px;" >
+               
             <div id="earth"></div>
             
                         <div class="row">
@@ -75,43 +72,60 @@
                                 <div><span id="question"></span>
                                 </div>
                     <div id="msg" class="col-md-12" >                                   
-                            
-                                
-                                    <div>Number of guesses remaining: <span id="remaining-guesses"></span>
-                                </div>
+                                 <div>Number of guesses remaining: <span id="remaining-guesses"></span>
+                                      </div>
                                 <div>Letters guessed: <span id="already-guessed"></span>
-                                </div>
-                                
-                                </div>
-                            </div>                            
-                    
-                    </div>
-                    <div class="col-md-2 mt-4" style="position:fixed;right:200px;bottom:150px;width:250px;"> 
+                                     </div>
+                     </div>
+                     
+                    <div class="col-md-2 mt-4" style="position:fixed;left:90px;top:30px;width:250px;"> 
                         <button id="hint-button">Hint(Country)</button>
                          <span id="hint"></span>
                      </div>
-                </div>
-               
+                     <div class="timer">
+                        <div class="show"></div>
+                        <div class="timecontainer">
+                          <div class="time">
+                            <div class="switcher" type="minutes">
+                              <div class="up"></div>
+                              <div class="time"></div>
+                              <div class="down"></div>
+                            </div>
+                            <div class="switcher" type="none">
+                              <div class="up"></div>
+                              <div class="time">:</div>
+                              <div class="down"></div>
+                            </div>
+                            <div class="switcher" type="seconds">
+                              <div class="up"></div>
+                              <div class="time"></div>
+                              <div class="down"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="begin">Begin</div>
+                      </div>
+                                     
+                           
             </div>
+            <div class="row">
+                <script>
+                    $(document).ready(function () {
+                    let webGame = new WebElems();
+                    document.onkeyup = function (event) {
+                        webGame.handleKeyInput(event.key);
+                    };
+                    $("#hint-button").on("click", function () {
+                        $("#hint").text(webGame.hint());
+                    });
+                    });
 
-        
-         </div>
-  
-    <div class="row">
-        <script>
-            $(document).ready(function () {
-            let webGame = new WebElems();
-            document.onkeyup = function (event) {
-                webGame.handleKeyInput(event.key);
-            };
-            $("#hint-button").on("click", function () {
-                $("#hint").text(webGame.hint());
-            });
-            });
-            
-        </script>
-    </div>
-  </div>
+                  
+                                
+                  </script>
+            </div>
+        </div>
 </body>
+</section>
 
 </html>

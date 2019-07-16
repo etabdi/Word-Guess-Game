@@ -1,13 +1,23 @@
-body {
-  background:white;
-  color:black;
-  width:1400px;
-  height:900;
-  }
+@media (min-width: 992px){
+
+  body{
+        	
+        	
+        	
+        	
+    background: #000 url('https://static.tumblr.com/tceouhx/hPfm58467/m31_gendler_nmosaic1.jpg') top left fixed;
+
+            
+color:#fff;
+font-size:11px;
+font-family:  "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", Geneva, Verdana, sans-serif ;
+text-shadow: #000 0px 1px 0px;
+}
+
   /* The animation code */
 @keyframes ex1 {
-    from {background-color:rgb(253, 8, 20);}
-    to {background-color:white;}
+    from {background-color:black;float: right;font-size: 15px;}
+    to {background-color:rgb(238, 147, 147);font-size: 60px;}
   }
   
   /* The element to apply the animation to */
@@ -39,7 +49,7 @@ body {
 
   }
   #box:hover {
-    background: white;
+    background: rgb(82, 19, 19);
     text-emphasis: none;
     text-align: left;
     padding: 40px auto;
@@ -47,21 +57,16 @@ body {
   }
   
   
-  header .banner {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-  }
   
   .start-msg {
   
     font-size: 40px;
     animation-name: ex1;
-    animation-duration: 4s;
-    animation-delay: 2s;
+    animation-duration:12s;
+    animation-delay: 6s;
     animation-iteration-count:100;
-    color:rgb(75, 121, 6);
+    color:yellow;
+    background: black;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     float:center;
     text-decoration-color: rgb(9, 255, 0);
@@ -70,14 +75,12 @@ body {
   
   #question {
     position:fixed ;
-    left:20px;
+    left:80px;
     top:250px;
-    border:solid black;
+    color: rgb(230, 230, 238);
     padding:40px;
-    background-color:white;
     font-size:25px;
     font-size:35px;
-    color:blue;
     letter-spacing:5px;
   }
   
@@ -86,24 +89,35 @@ body {
   }
     #hint-button
     {font-size: 40px;
-    background-color: rgb(220, 220, 228);
+    background-color: rgb(169, 169, 218);
   }
   #hint {
     font-size: 36px;
-    color:blue
+    color:rgb(236, 122, 8);
+    background-color:rgb(40, 40, 66);
+      clear: both;
+    margin:100px 0px 0px 0px}
     
 
   }
+ .main{
+  
+   height:400px;
+   width:1200px;
+   float:center;
+ }
+
+
 
   #earth {
     /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
-    position: fixed;
-    left:450px;
-    top:100px;
+    position:absolute;
+    left:550px;
+    top:150px;
   
     /* [2] Set-up the dimensions and spacing */
-    width: 600px;
-    height: 600px;
+    width: 30%;
+    height:60%;
     margin:10px auto;
   
     /* [3] Prepare the animation effects */
@@ -111,10 +125,10 @@ body {
     animation: rotate 4s linear infinite; /* This is going to be defined in the next step */
   
     /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
-    color: #000;
+    color: wheat;
     border-radius: 50%;
     background: url(https://lh5.googleusercontent.com/-kkxEx-SkRaY/VBLF4BV2lZI/AAAAAAAAKao/FnKsv7402_c/s0/earthmap.jpg) 0 0 repeat / 630px;
-    box-shadow: inset 20px 0 80px 6px rgba(0, 0, 0, 1);
+    box-shadow: inset 20px 0 20px 6px rgba(0, 0, 0, 1);
   
     /* [5] Position things in a 3d space */
     transform-style: preserve-3d;
@@ -158,21 +172,50 @@ body {
     0% {background-position: 0 0;}
     100% {background-position: 630px 0;}
   }
-  .banner-heading{
-	font-family: 'Lobster', cursive;
-	font-size: 75px;
-    font-weight: 700;
-    line-height: 100px;
-    margin-bottom: 30px;
-  color:rgb(19, 3, 3);
+    #demotext {
+        color: #FFFFFF;
+        background: #232323;
+        text-shadow: 0 0 5px rgb(136, 134, 134), 0 0 10px rgb(156, 149, 149), 0 0 15px rgb(104, 109, 102), 0 0 20px #ffb618, 0 0 30px rgb(255, 201, 24), 0 0 40px rgb(255, 220, 24), 0 0 55px rgb(255, 232, 24), 0 0 75px #ffc118;
+        color: #FFFFFF;
+        background: #232323;
+        font-size:60px;
+        margin:0px 0px 0px 600px;
+        padding:0px 20px 20px 60px ;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      
+    }
   
-  }
   main {
     margin:auto;
-    width:100%;
+    width:85%;
     height:100%;
     padding:15px;
   }
+
+
+@media (min-width: 576px) { 
+
+
+}
+
+@media (min-width: 768px) { 
+
+
+
+ }
+
+
+
+@media (min-width: 1200px) {
+
+
+ }
   
   
   

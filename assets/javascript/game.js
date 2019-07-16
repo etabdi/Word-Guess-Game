@@ -223,10 +223,15 @@ const cityData = {
   
       if (this.game.remaining === 0) {
         this.showAnswer();
-        this.game.started = false;
-      }
-    }
+        this.game.started = false;        
+        alert("GAME OVER");
+        document("GAME OVER");
+      
+        
+
   
+    }
+    }
     
     showAnswer() {
       this.answer.textContent = this.game.answer;
@@ -238,11 +243,7 @@ const cityData = {
       return this.game.hint();
     }
   }
-  var x = document.getElementById("myAudio").autoplay;
-
-  if (num-wins===0)
-  {
-    alert("you win");
-  }
-
   
+
+
+ 
